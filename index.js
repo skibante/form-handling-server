@@ -2,6 +2,7 @@ const express = require ('express');
 const dotenv = require ('dotenv');
 const colors = require ('colors');
 const connectDB = require('./config/db');
+const cors = require('cors')
 
 // load env varables
 dotenv.config({path:".env"});
@@ -15,6 +16,8 @@ const app = express();
 //middleware setup
 
 app.use(express.json())  //body parser
+
+app.use(cors());
 
 
 //mount routes
